@@ -3,11 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "storybook": "^5.1.11"
   },
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -29,11 +36,32 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^5.2.1",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HubertStefanski/carlet.git"
+  },
+  "keywords": [
+    "Web",
+    "app",
+    "assingment",
+    "project",
+    "react",
+    "nodejs"
+  ],
+  "author": "Hubert Stefanski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HubertStefanski/carlet/issues"
+  },
+  "homepage": "https://github.com/HubertStefanski/carlet#readme"
 }
