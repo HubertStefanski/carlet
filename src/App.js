@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './components/header';
+import CarList from './components/carList';
+import Navigator from './components/navigator';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    const example = [{
+      type: 'sedan',
+      picture: { thumbnail: './stories/stock.png' },
+      brand: 'BMW',
+      model: 'M4',
+      year: '191',
+      owner: 'carlet'
+    }, {
+      type: 'hatchback',
+      picture: { thumbnail: './stories/stock.png' },
+      brand: 'FIAT',
+      model: 'punto',
+      year: '161',
+      owner: 'puntolover'
+    }, {
+      type: 'suv',
+      picture: { thumbnail: './stories/stock.png' },
+      brand: 'KIA',
+      model: 'sportage',
+      year: '142',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: './stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }
+    ];
+    return (
+      <div className="jumbotron">
+        <div className="container-fluid">
+          <div className="sidenav">
+            <Navigator />
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-6 offset-3">
+              <h1><a href='/'>Rentals available</a></h1>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6 offset-3">
+              <Header noCars={example.length} />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6 offset-3">
+              <CarList cars={example} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    );
+
+  }
 }
-
-export default App;

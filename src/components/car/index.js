@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./car.css";
 import "../../fontawesome";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import { isParenthesizedExpression } from "@babel/types";
 
 class Car extends Component {
@@ -17,8 +17,8 @@ class Car extends Component {
                     <div className="card-body">
                         <h5 className="card-title ">
                             {`${this.props.car.brand} ${
-                                this.props.car.make
-                                }`}
+                                this.props.car.model
+                                } ${this.props.car.year}`}
                         </h5>
                         <p key="owner">
                             <span> {this.props.car.owner} </span>
@@ -30,11 +30,11 @@ class Car extends Component {
                             role="group"
                             aria-label="..."
                         >
-                            <button type="button" className={"btn btn-default w-100"}>
-                                {" Edit "}
+                            <button type="button" className={"btn btn-info w-100"}>
+                                {" View Details "}
                             </button>
-                            <button type="button" className={"btn btn-danger w-100"}>
-                                {"Delete"}
+                            <button type="button" className={"btn btn-primary w-100"}>
+                                {"Rent this car"}
                             </button>
                         </div>
                     </div>
