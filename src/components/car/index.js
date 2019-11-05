@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./car.css";
-import "../../fontawesome";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { isParenthesizedExpression } from "@babel/types";
 
-class Car extends Component {
+export default class Car extends Component {
     render() {
         return (
             <div className="col-sm-3">
@@ -43,5 +40,3 @@ class Car extends Component {
         );
     }
 }
-
-export default Car;
