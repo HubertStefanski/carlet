@@ -39,8 +39,8 @@ export default class App extends Component {
     return (
       <div className="jumbotron">
         <div className="container-fluid">
-          <div className="sidenav">
-            <Navigator />
+          <div className="navigator">
+            
           </div>
         </div>
         <div className="container-fluid">
