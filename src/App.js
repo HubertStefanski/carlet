@@ -3,41 +3,98 @@ import './App.css';
 import Header from './components/header';
 import CarList from './components/carList';
 import Navigator from './components/navigator';
+import ListFilters from './components/listFilters';
 
 
 export default class App extends Component {
   render() {
     const example = [{
       type: 'sedan',
-      picture: { thumbnail: '../stories/stock.png' },
+      picture: { thumbnail: 'stories/stock.png' },
       brand: 'BMW',
       model: 'M4',
       year: '191',
       owner: 'carlet'
     }, {
       type: 'hatchback',
-      picture: { thumbnail: '../stories/stock.png' },
+      picture: { thumbnail: 'stories/stock.png' },
       brand: 'FIAT',
       model: 'punto',
       year: '161',
       owner: 'puntolover'
     }, {
       type: 'suv',
-      picture: { thumbnail: '../stories/stock.png' },
+      picture: { thumbnail: 'stories/stock.png' },
       brand: 'KIA',
       model: 'sportage',
       year: '142',
       owner: 'carlet'
     }, {
       type: 'estate',
-      picture: { thumbnail: '../stories/stock.png' },
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
+      brand: 'MERCEDES-BENZ',
+      model: 'e300',
+      year: '162',
+      owner: 'carlet'
+    }, {
+      type: 'estate',
+      picture: { thumbnail: 'stories/stock.png' },
       brand: 'MERCEDES-BENZ',
       model: 'e300',
       year: '162',
       owner: 'carlet'
     }
     ];
-    const cars =[{example,example,example,example,example}]
+    
     return (
       <div className="jumbotron">
         <div className="container-fluid">
@@ -58,7 +115,12 @@ export default class App extends Component {
           </div>
           <div className="row">
             <div className="col-md-6 offset-3">
-              <CarList cars={cars} />
+              <ListFilters />
+            </div>
+            </div>
+          <div className="row">
+            <div className="col-md-6 offset-3">
+              <CarList cars={example} />
             </div>
           </div>
         </div>

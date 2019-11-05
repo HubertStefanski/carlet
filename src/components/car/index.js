@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./car.css";
+import "../../fontawesome";
 
 export default class Car extends Component {
     render() {
@@ -31,7 +32,7 @@ export default class Car extends Component {
                                 {" View Details "}
                             </button>
                             <button type="button" className={"btn btn-primary w-100"}>
-                                {"Rent this car"}
+                                {" Rent this car "}
                             </button>
                         </div>
                     </div>

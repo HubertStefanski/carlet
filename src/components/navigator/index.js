@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavItem, NavDropdown } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Home from '../home/index.js';
 import Listings from '../rentals/listings/';
 import UserListings from '../rentals/listings';
 import Faq from '../info/faq/';
 import Tnc from '../info/tnc';
+import LoginPage from '../loginPage';
 import './navstyle.css';
 
 export default class Nagivator extends Component {
@@ -55,6 +57,7 @@ export default class Nagivator extends Component {
                                     <NavItem><Link to="/info/faq">Frequently asked Questions</Link></NavItem>
                                     <NavItem><Link to="/info/tnc">Terms And Conditions</Link></NavItem>
                                 </NavDropdown>
+                                <NavItem eventkey={2} href="/loginPage"><Link to="/loginPage/">Login</Link></NavItem>
                             </Nav>
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -63,16 +66,17 @@ export default class Nagivator extends Component {
                         </Navbar.Collapse>
                     </Navbar>
                 </div>
-                <div>
-                    <Switch>
-                        <Route exact path="/" Component={Home} />
-                        <Route path="rentals/listings" component={Listings} />
-                        <Route path="rentals/userListings" component={UserListings} />
-                        <Route path="info/faq" component={Faq} />
-                        <Route path="info/tnc" component={Tnc} />
-                    </Switch>
-                </div>
+                <Switch>
+                    <Route exact path="/" Component={Home} />
+                    <Route path="rentals/listings" component={Listings} />
+                    <Route path="rentals/userListings" component={UserListings} />
+                    <Route path="info/faq" component={Faq} />
+                    <Route path="info/tnc" component={Tnc} />
+                    <Route path="login" component={LoginPage} />
+                </Switch>
             </Router >
         );
     }
 }
+
+ReactDOM.render(<Router />, document.getElementById("root"));
