@@ -1,11 +1,17 @@
-import React,{Component} from 'react';
+import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 
-export default class Home extends Component {
+
+class Home extends Component {
     render() {
         return (
-            <div>
-                <h1>TODO</h1>
-            </div>
+            <div className="jumbotron">
+                <div classname="container-fluid">
+                    <h1> Welcome to carlet, your all-stop shop for airbnb-like car rentals</h1>
+                </div>
+            </div >
         );
+
     }
 }
+export default withRouter(Home);

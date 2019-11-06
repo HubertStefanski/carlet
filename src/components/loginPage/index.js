@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import OktaSignIn from '@okta/okta-signin-widget';
 import Backbone from 'backbone';
+import { withRouter } from 'react-router-dom';
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
     constructor() {
         super();
         this.state = { user: null };
@@ -50,19 +51,24 @@ export default class LoginPage extends Component {
 
     render() {
         return (
-            <div className="jumbotron">
-                <div className="container-fluid"></div>
-                {this.state.user ? (
-                    <div className="container">
-                        <div>Welcome, {this.state.user}!</div>
-                        <button onClick={this.logout}>Logout</button>
+            <Fragment>
+                <div className="jumbotron">
+                    <div className="container-fluid">
+                        {this.state.user ? (
+                            <div className="container">
+                                <div>Welcome, {this.state.user}!</div>
+                                <button onClick={this.logout}>Logout</button>
+                            </div>
+                        ) : null}
+                        {this.state.user ? null : (
+                            <div ref={(div) => { this.loginContainer = div; }} />
+                        )}
                     </div>
-                ) : null}
-                {this.state.user ? null : (
-                    <div ref={(div) => { this.loginContainer = div; }} />
-                )}
-            </div>
-            
+                </div>
+            </Fragment>
+
         );
     }
 }
+
+export default withRouter(LoginPage);
