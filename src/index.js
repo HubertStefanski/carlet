@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 const routing = (
-        <div className="jumbotron">
+        <div className="header">
             <div className="container-fluid">
 
                 <App />

@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="header">
         <div className="container-fluid">
-          <div className="col-md-6">
+          <div className="col-md-12">
             <Fragment>
               <Navigator />
             </Fragment>

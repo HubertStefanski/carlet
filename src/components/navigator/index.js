@@ -35,34 +35,38 @@ export default class Navigator extends Component {
                 <Router>
 
                     <Navbar>
-                        <Navbar.Brand as={Link} to="/" >Carlet</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/home" >Carlet</Navbar.Brand>
                         <Navbar.Collapse>
                             <Nav className="mr-auto">
-                                <NavItem eventkey={1} href="/">
-                                    <Nav.Link as={Link} to="/" >Home</Nav.Link>
+                                <NavItem eventkey={1} href="/home">
+                                    <Nav.Link to="/home" >Home</Nav.Link>
                                 </NavItem>
-                                <NavDropdown
-                                    title="Rentals"
-                                    onMouseEnter={this.handleOpen}
-                                    onMouseLeave={this.handleClose}
-                                    open={this.state.isOpen}
-                                    noCaret
-                                    id="language-switcher-container"
-                                >
-                                    <NavItem><Link to="/rentals/listings">listings</Link></NavItem>
-                                    <NavItem><Link to="/rentals/userListings" href="/rentals/userListings">Your Listings</Link></NavItem>
-                                </NavDropdown>
-                                <NavDropdown
-                                    title="Information"
-                                    onMouseEnter={this.handleOpen}
-                                    onMouseLeave={this.handleClose}
-                                    open={this.state.isOpen}
-                                    noCaret
-                                    id="language-switcher-container"
-                                >
-                                    <NavItem><Link to="/info/faq">Frequently asked Questions</Link></NavItem>
-                                    <NavItem><Link to="/info/tnc">Terms And Conditions</Link></NavItem>
-                                </NavDropdown>
+                                <NavItem>
+                                    <NavDropdown
+                                        title="Rentals"
+                                        onMouseEnter={this.handleOpen}
+                                        onMouseLeave={this.handleClose}
+                                        open={this.state.isOpen}
+                                        noCaret
+                                        id="language-switcher-container"
+                                    >
+                                        <NavItem><Link to="/rentals/listings">listings</Link></NavItem>
+                                        <NavItem><Link to="/rentals/userListings">Your Listings</Link></NavItem>
+                                    </NavDropdown>
+                                </NavItem>
+                                <NavItem>
+                                    <NavDropdown
+                                        title="Information"
+                                        onMouseEnter={this.handleOpen}
+                                        onMouseLeave={this.handleClose}
+                                        open={this.state.isOpen}
+                                        noCaret
+                                        id="language-switcher-container"
+                                    >
+                                        <NavItem><Link to="/info/faq">Frequently asked Questions</Link></NavItem>
+                                        <NavItem><Link to="/info/tnc">Terms And Conditions</Link></NavItem>
+                                    </NavDropdown>
+                                </NavItem>
                                 <NavItem eventkey={2} href="/login"><Link to="/login/">Login</Link></NavItem>
                             </Nav>
                             <Form inline>
@@ -73,13 +77,13 @@ export default class Navigator extends Component {
                     </Navbar>
                     <Switch>
                         <Route exact path="/" Component={Home} />
+                        <Route path="/home" Component={Home} />
                         <Route path="/rentals/listings" component={Listings} />
                         <Route path="/rentals/userListings" component={UserListings} />
                         <Route path="/info/faq" component={Faq} />
                         <Route path="/info/tnc" component={Tnc} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
-
                 </Router >
             </div >
         );
