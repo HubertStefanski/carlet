@@ -1,15 +1,15 @@
-import React, {Component } from "react";
+import React, { Component } from "react";
 import "./filterStyle.css";
 
 export default class listFilters extends Component {
-    render(){
-    return(
-        <div className="container-fluid">
-            <div className="row bg-light">
-                <div className="col-md-24">
+    render() {
+        return (
+            <div className="container-fluid">
+                <div className="row sm-light">
+
                     <h1>
                         <span> filters </span>
-                        <input type ="text" placeholder="Search by make"/>
+                        <input type="text" placeholder="Search by make" />
                         <select id="price">
                             <option value="asc">ascending</option>
                             <option value="desc">descending</option>
@@ -17,7 +17,6 @@ export default class listFilters extends Component {
                     </h1>
                 </div>
             </div>
-        </div>
-    )
+        )
     }
 }

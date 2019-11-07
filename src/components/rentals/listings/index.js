@@ -96,16 +96,10 @@ class Listings extends Component {
         return (
             <Fragment>
                 <div>
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-md-6 offset-3">
-                                <h1>Rentals available</h1>
-                            </div>
-                        </div>
-                    </div>
+
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <Header noCars={example.length} />
+                            <h1>Our offers  <Header noCars={example.length} /> </h1>
                         </div>
                     </div>
                     <div className="row">
