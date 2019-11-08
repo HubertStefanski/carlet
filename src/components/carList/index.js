@@ -1,10 +1,12 @@
+
 import React, { Component } from "react";
 import Car from "../car/";
 import './carList.css';
 
 export default class CarList extends Component {
     render(){
-        const carCards = this.props.cars.map(c =>(
+        const fromArray = Array.from(this.props.cars)
+        const carCards = fromArray.map(c =>(
             <Car key={c.owner} car={c} />
         ));
         return(

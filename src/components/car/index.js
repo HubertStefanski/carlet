@@ -21,6 +21,9 @@ export default class Car extends Component {
                         <p key="owner">
                             <span> {this.props.car.owner} </span>
                         </p>
+                        <p key="price">
+                            <span> {this.props.car.price} /day </span>
+                        </p>
                     </div>
                     <div className="card-footer">
                         <div

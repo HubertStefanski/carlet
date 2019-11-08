@@ -3,103 +3,35 @@ import { withRouter } from 'react-router-dom';
 import Header from '../../header';
 import CarList from '../../carList';
 import ListFilters from '../../listFilters';
+import localCache from "../../../resources/localCache";
+let request = require("superagent");
 
-const example = [{
-    type: 'sedan',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'BMW',
-    model: 'M4',
-    year: '191',
-    owner: 'carlet'
-}, {
-    type: 'hatchback',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'FIAT',
-    model: 'punto',
-    year: '161',
-    owner: 'puntolover'
-}, {
-    type: 'suv',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'KIA',
-    model: 'sportage',
-    year: '142',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}, {
-    type: 'estate',
-    picture: { thumbnail: 'stories/stock.png' },
-    brand: 'MERCEDES-BENZ',
-    model: 'e300',
-    year: '162',
-    owner: 'carlet'
-}
-];
+
+
+
 
 class Listings extends Component {
+    componentDidMount() {
+        request.get("http://localhost:3001/car").end((error, res) => {
+            if (res) {
+                let cars = JSON.parse(res.text);
+                localCache.populate(cars);
+                this.setState({});
+            } else {
+                console.log(error);
+            }
+        });
+    }
     render() {
+
+        let updatedCarsList = localCache.getAll();
         return (
             <Fragment>
                 <div>
 
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <h1>Our offers  <Header noCars={example.length} /> </h1>
+                            <h1>Our offers  <Header noCars={updatedCarsList.length} /> </h1>
                         </div>
                     </div>
                     <div className="row">
@@ -109,7 +41,7 @@ class Listings extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <CarList cars={example} />
+                            <CarList cars={updatedCarsList} />
                         </div>
                     </div>
                 </div>
