@@ -62,6 +62,114 @@
             "year": "2019",
             "owner":"grandtourer",
             "price": "1000"
+        },
+        {
+            "type": "SUV",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "G",
+            "year": "2016",
+            "owner":"cargoman",
+            "price": "300"
+        },
+        {
+            "type": "HATCHBACK",
+            "picture": "stories/stock.png",
+            "brand": "FORD",
+            "model": "FIESTA",
+            "year": "2010",
+            "owner":"feistyfiesta",
+            "price": "50"
+        },
+        {
+            "type": "VAN",
+            "picture": "stories/stock.png",
+            "brand": "FIAT",
+            "model": "DUCATO",
+            "year": "2014",
+            "owner":"jimsbiscuits",
+            "price": "100"
+        },
+        {
+            "type": "ESTATE",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "E300",
+            "year": "2014",
+            "owner":"caramelo",
+            "price": "150"
+        },
+        {
+            "type": "SEDAN",
+            "picture": "stories/stock.png",
+            "brand": "AUDI",
+            "model": "A4",
+            "year": "2011",
+            "owner":"arnold",
+            "price": "70"
+        },
+        {
+            "type": "COUPE",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "AMG GT",
+            "year": "2019",
+            "owner":"grandtourer",
+            "price": "1000"
+        },
+        {
+            "type": "SUV",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "G",
+            "year": "2016",
+            "owner":"cargoman",
+            "price": "300"
+        },
+        {
+            "type": "HATCHBACK",
+            "picture": "stories/stock.png",
+            "brand": "FORD",
+            "model": "FIESTA",
+            "year": "2010",
+            "owner":"feistyfiesta",
+            "price": "50"
+        },
+        {
+            "type": "VAN",
+            "picture": "stories/stock.png",
+            "brand": "FIAT",
+            "model": "DUCATO",
+            "year": "2014",
+            "owner":"jimsbiscuits",
+            "price": "100"
+        },
+        {
+            "type": "ESTATE",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "E300",
+            "year": "2014",
+            "owner":"caramelo",
+            "price": "150"
+        },
+        {
+            "type": "SEDAN",
+            "picture": "stories/stock.png",
+            "brand": "AUDI",
+            "model": "A4",
+            "year": "2011",
+            "owner":"arnold",
+            "price": "70"
+        },
+        {
+            "type": "COUPE",
+            "picture": "stories/stock.png",
+            "brand": "MERCEDES-BENZ",
+            "model": "AMG GT",
+            "year": "2019",
+            "owner":"grandtourer",
+            "price": "1000"
         }
     ]
 }

@@ -1,4 +1,4 @@
-class LocalCache {
+class LocalCarCache {
 
     constructor() {
         this.cars = [] ;
@@ -15,4 +15,4 @@ class LocalCache {
 
 }
 
-export default (new LocalCache() );
+export default (new LocalCarCache() );

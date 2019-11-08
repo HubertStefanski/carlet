@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Header from '../../header';
 import CarList from '../../carList';
 import ListFilters from '../../listFilters';
-import localCache from "../../../resources/localCache";
+import localCarCache from "../../../resources/localCarCache";
 let request = require("superagent");
 
 
@@ -15,7 +15,7 @@ class Listings extends Component {
         request.get("http://localhost:3001/car").end((error, res) => {
             if (res) {
                 let cars = JSON.parse(res.text);
-                localCache.populate(cars);
+                localCarCache.populate(cars);
                 this.setState({});
             } else {
                 console.log(error);
@@ -24,7 +24,7 @@ class Listings extends Component {
     }
     render() {
 
-        let updatedCarsList = localCache.getAll();
+        let updatedCarsList = localCarCache.getAll();
         return (
             <Fragment>
                 <div>

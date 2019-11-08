@@ -6,9 +6,10 @@ import './navstyle.css';
 import Home from '../home/';
 import Listings from '../rentals/listings/';
 import UserListings from '../rentals/listings/';
-import Faq from '../info/faq';
-import Tnc from '../info/tnc';
-import LoginPage from '../loginPage';
+import Faq from '../info/faq/';
+import Tnc from '../info/tnc/';
+import LoginPage from '../loginPage/';
+import UsersPage from '../users/usersPage/';
 
 
 
@@ -38,9 +39,6 @@ export default class Navigator extends Component {
                         <Navbar.Brand as={Link} to="/home" >Carlet</Navbar.Brand>
                         <Navbar.Collapse>
                             <Nav className="mr-auto">
-                                <NavItem eventkey={1} href="/home">
-                                    <Nav.Link to="/home" >Home</Nav.Link>
-                                </NavItem>
                                 <NavItem>
                                     <NavDropdown
                                         title="Rentals"
@@ -67,7 +65,19 @@ export default class Navigator extends Component {
                                         <NavItem><Link to="/info/tnc">Terms And Conditions</Link></NavItem>
                                     </NavDropdown>
                                 </NavItem>
-                                <NavItem eventkey={2} href="/login"><Link to="/login/">Login</Link></NavItem>
+                                <NavItem>
+                                    <NavDropdown
+                                        title="User Management"
+                                        onMouseEnter={this.handleOpen}
+                                        onMouseLeave={this.handleClose}
+                                        open={this.state.isOpen}
+                                        noCaret
+                                        id="language-switcher-container"
+                                    >
+                                        <NavItem><Link to="/users/usersPage/">Users </Link></NavItem>
+                                        <NavItem><Link to="/login">Login </Link></NavItem>
+                                    </NavDropdown>
+                                </NavItem>
                             </Nav>
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -76,12 +86,13 @@ export default class Navigator extends Component {
                         </Navbar.Collapse>
                     </Navbar>
                     <Switch>
-                        <Route exact path="/" Component={Home} />
-                        <Route path="/home" Component={Home} />
+                        <Route exact path="/" component={Home} />
+                        <Route path="/home" component={Home} />
                         <Route path="/rentals/listings" component={Listings} />
                         <Route path="/rentals/userListings" component={UserListings} />
                         <Route path="/info/faq" component={Faq} />
                         <Route path="/info/tnc" component={Tnc} />
+                        <Route path="/users/usersPage" component={UsersPage} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
                 </Router >
