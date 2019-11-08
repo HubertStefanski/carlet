@@ -10,6 +10,8 @@ import Faq from '../info/faq/';
 import Tnc from '../info/tnc/';
 import LoginPage from '../loginPage/';
 import UsersPage from '../users/usersPage/';
+import RegisterUser from '../users/registerUser';
+import registerUser from '../users/registerUser';
 
 
 
@@ -75,7 +77,8 @@ export default class Navigator extends Component {
                                         id="language-switcher-container"
                                     >
                                         <NavItem><Link to="/users/usersPage/">Users </Link></NavItem>
-                                        <NavItem><Link to="/login">Login </Link></NavItem>
+                                        <NavItem><Link to="/users/registerUser/"> Register</Link> </NavItem>
+                                        <NavItem><Link to="/login"> Login </Link></NavItem>
                                     </NavDropdown>
                                 </NavItem>
                             </Nav>
@@ -93,6 +96,7 @@ export default class Navigator extends Component {
                         <Route path="/info/faq" component={Faq} />
                         <Route path="/info/tnc" component={Tnc} />
                         <Route path="/users/usersPage" component={UsersPage} />
+                        <Route path="/users/registerUser" component={registerUser} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
                 </Router >
