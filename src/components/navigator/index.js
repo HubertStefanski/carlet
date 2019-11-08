@@ -11,7 +11,7 @@ import Tnc from '../info/tnc/';
 import LoginPage from '../loginPage/';
 import UsersPage from '../users/usersPage/';
 import RegisterUser from '../users/registerUser';
-import registerUser from '../users/registerUser';
+
 
 
 
@@ -96,7 +96,7 @@ export default class Navigator extends Component {
                         <Route path="/info/faq" component={Faq} />
                         <Route path="/info/tnc" component={Tnc} />
                         <Route path="/users/usersPage" component={UsersPage} />
-                        <Route path="/users/registerUser" component={registerUser} />
+                        <Route path="/users/registerUser" component={RegisterUser} />
                         <Route path="/login" component={LoginPage} />
                     </Switch>
                 </Router >

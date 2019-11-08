@@ -1,46 +1,29 @@
 import React, { Component } from "react";
 import "./car.css";
 import "../../fontawesome";
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
 export default class Car extends Component {
     render() {
         return (
             <div className="col-sm-3">
-                <div className="card">
-                    <img
-                        className="card-img-tag center "
-                        alt={this.props.car.type}
-                        src={this.props.car.picture.thumbnail}
-                    />
-                    <div className="card-body">
-                        <h5 className="card-title ">
-                            {`${this.props.car.brand} ${
-                                this.props.car.model
-                                } ${this.props.car.year}`}
-                        </h5>
-                        <p key="owner">
-                            <span> {this.props.car.owner} </span>
-                        </p>
-                        <p key="price">
-                            <span> {this.props.car.price} /day </span>
-                        </p>
-                    </div>
-                    <div className="card-footer">
-                        <div
-                            className="btn-group d-flex btn-group-justified"
-                            role="group"
-                            aria-label="..."
-                        >
-                            <button type="button" className={"btn btn-info w-100"}>
-                                {" View Details "}
-                            </button>
-                            <button type="button" className={"btn btn-primary w-100"}>
-                                {" Rent this car "}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <MDBCol>
+                    <MDBCard style={{ width: "22rem" }}>
+                        <MDBCardImage className="img-fluid" src={this.props.car.picture.thumbnail} waves />
+                        <MDBCardBody>
+                            <MDBCardTitle>{this.props.car.brand} {this.props.car.model} {this.props.car.year}</MDBCardTitle>
+                            <MDBCardText>
+                                {this.props.car.price}
+                            </MDBCardText>
+                            <MDBBtn href="#">View Details</MDBBtn>
+                            <MDBBtn href="#">Message Owner {this.props.car.owner}</MDBBtn>
+                        </MDBCardBody>
+                    </MDBCard>
+                </MDBCol>
+
             </div>
+
         );
+
     }
 }
