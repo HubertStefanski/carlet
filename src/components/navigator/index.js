@@ -11,6 +11,7 @@ import Tnc from '../info/tnc/';
 import LoginPage from '../loginPage/';
 import UsersPage from '../users/usersPage/';
 import RegisterUser from '../users/registerUser';
+import ContactForm from '../info/contactForm';
 
 
 
@@ -65,6 +66,7 @@ export default class Navigator extends Component {
                                     >
                                         <NavItem><Link to="/info/faq">Frequently asked Questions</Link></NavItem>
                                         <NavItem><Link to="/info/tnc">Terms And Conditions</Link></NavItem>
+                                        <NavItem><Link to="/info/contact">Contact Us</Link></NavItem>
                                     </NavDropdown>
                                 </NavItem>
                                 <NavItem>
@@ -95,6 +97,7 @@ export default class Navigator extends Component {
                         <Route path="/rentals/userListings" component={UserListings} />
                         <Route path="/info/faq" component={Faq} />
                         <Route path="/info/tnc" component={Tnc} />
+                        <Route path="/info/contact" component={ContactForm} />
                         <Route path="/users/usersPage" component={UsersPage} />
                         <Route path="/users/registerUser" component={RegisterUser} />
                         <Route path="/login" component={LoginPage} />
