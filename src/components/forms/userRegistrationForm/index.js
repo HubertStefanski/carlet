@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
+let request = require("superagent");
 
 export default class Form extends Component {
 
 
     state = { name: '', password: '', regDate: 'Implement timestamp', email: '' };
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        // this.props.handleAdd(this.state.name, this.state.password, this.state.email)
+        this.setState({ name: '', password: '', email: '' });
+        var toJSON = JSON.stringify(`{${this.props.state}}`)
+        request.post("http://localhost:3002/user").end((error, res) => {
+            if (res) {
+                let data = toJSON;
+                this.setState({ data });
+            } else {
+                console.log(error);
+            }
+        });
+    }
 
 
     handleNameChange = (e) => this.setState({ name: e.target.value });
@@ -20,7 +35,7 @@ export default class Form extends Component {
                         className="form-control"
                         placeholder="username"
                         value={this.state.name}
-                        onChange={this.handleNameeChange} />
+                        onChange={this.handleNameChange} />
                 </div>
                 <div className="form-group">
                     <input type="text"
@@ -42,7 +57,8 @@ export default class Form extends Component {
                         value={this.state.link}
                         onChange={this.handleEmailChange} />
                 </div>
-                <button type="submit" className="btn btn-primary">Register</button>
+                <button type="submit" className="btn btn-primary"
+                    onClick={this.handleSubmit}> Register </button>
             </form>
         );
     }
