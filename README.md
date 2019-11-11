@@ -40,11 +40,17 @@ Contact form submissions are to be stored in a JSON server aswell, but as of yet
 ![][mainview]
 
 >> Displays all currently listed cars
+
 ![][register]
+
 >> user registration form
+
 ![][login]
+
 >> login for user
+
 ![][userview]
+
 >> show all users on the applicationa and give options for message and view profile 
 
 ## Routing.
@@ -81,7 +87,7 @@ Okta login widget for web servers, registration by react form
 
 
 [dataflow]: ./img/dataflow.png
-[mainview]: ./img/main\ view.png
+[mainview]: ./img/mainview.png
 [story]: ./img/story.png
 [register]: ./img/register.png
 [userview]: ./img/userview.png
