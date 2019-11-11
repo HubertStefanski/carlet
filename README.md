@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BSc (Hons.) Level 8 - Assignment 1 - Single Page app.
 
-## Available Scripts
+Name: Hubert Stefanski
 
-In the project directory, you can run:
+## Overview.
 
-### `npm start`
+Carlet is a car letting app allowing users to advertise their cars on a 'Airbnb-like' app interface, This allows both sides to avoid high costs which are usually involved in normal car rental places, giving an alternative for people looking for an inexpensive rental for their holidays. Users can advertise their spare or even everyday car with the price they request per day
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+. . . . . List of user features  . . . .
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- User management 
+- Main rental page 
+- Users listed rentals (to be implemented)
+- User registration
+- User Login
+- Info pages
+- Contact Form page
 
-### `npm test`
+## Setup.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Install dependent node modules 
+- From carlet/src/resource run:
+- json-server ./users.json -p 3002
+- json-server ./cars.json -p 3001
+- From /carlet/ run:
+- npm start
 
-### `npm run build`
+## Data Model Design.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![][dataflow]
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Registered users and cars are stored on a JSON server, there is no private view implementation for user Listings yet.
+Contact form submissions are to be stored in a JSON server aswell, but as of yet they are not implemented
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## UI Design.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![][mainview]
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+>> Displays all currently listed cars
+![][register]
+>> user registration form
+![][login]
+>> login for user
+![][userview]
+>> show all users on the applicationa and give options for message and view profile 
 
-## Learn More
+## Routing.
+all Routes are located in the Navigator component
+```
+<Route exact path="/" component={Home} />
+                        <Route path="/home" component={Home} />
+                        <Route path="/rentals/listings" component={Listings} />
+                        <Route path="/rentals/userListings" component={UserListings} />
+                        <Route path="/info/faq" component={Faq} />
+                        <Route path="/info/tnc" component={Tnc} />
+                        <Route path="/info/contact" component={ContactForm} />
+                        <Route path="/users/usersPage" component={UsersPage} />
+                        <Route path="/users/registerUser" component={RegisterUser} />
+                        <Route path="/login" component={LoginPage} />
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Storybook.
 
-### Code Splitting
+![][story]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Backend (Optional).
 
-### Making a Progressive Web App
+JSON server for storage of user information and car info  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Authentication (Optional).
 
-### Advanced Configuration
+Okta login widget for web servers, registration by react form
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[dataflow]: ./img/dataflow.png
+[mainview]: ./img/main\ view.png
+[story]: ./img/story.png
+[register]: ./img/register.png
+[userview]: ./img/userview.png
+[login]: ./img/login.png
+[main]: ./img/main.png
+[detail]: ./img/detail.png
+[stories]: ./img/stories.png

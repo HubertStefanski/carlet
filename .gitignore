@@ -13,6 +13,8 @@
 .png
 # production
 /build
+# github
+/img
 
 # misc
 .DS_Store
