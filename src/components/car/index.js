@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./car.css";
-import "../../fontawesome";
+import React, { Component } from 'react';
+import './car.css';
+import '../../fontawesome';
 
 export default class Car extends Component {
     render() {
@@ -31,11 +31,11 @@ export default class Car extends Component {
                             role="group"
                             aria-label="..."
                         >
-                            <button type="button" className={"btn btn-info w-100"}>
-                                {" View Details "}
+                            <button type="button" className="btn btn-info w-100">
+                                 View Details 
                             </button>
-                            <button type="button" className={"btn btn-primary w-100"}>
-                                {" Rent this car "}
+                            <button type="button" className="btn btn-primary w-100">
+                                 Rent this car 
                             </button>
                         </div>
                     </div>
