@@ -1,14 +1,19 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import usersRouter from './api/users';
+import carsRouter from './api/cars';
 
 dotenv.config();
 
-const server = express();
+const app = express();
 
 const port = process.env.PORT;
 
-server.use(express.static('public'));
+app.use(express.static('public'));
 
-server.listen(port, () => {
+app.use('/api/users', usersRouter);
+app.use('/api/cars', carsRouter);
+
+app.listen(port, () => {
   console.info(`Server running at ${port}`);
 });
