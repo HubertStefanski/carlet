@@ -36,5 +36,18 @@ router.put('/:id', (req, res) => {
         res.status(400).send({ message: 'Unable to find Contact in request. No Contact Found in body' });
     }
 });
+//DELETE
+router.delete('/:id', (req, res) => {
+    const key = req.params.id;
+    const index = cars.map((cars)=>{
+return cars.uid;
+}).indexOf(key);
+   if (index > -1) {
+cars.splice(index, 1);
+       res.status(200).send({message: `Deleted car with uid: ${key}.`});
+   } else {
+     res.status(400).send({message: `Unable to find car with uid: ${key}.`});
+     }
+});
 
 export default router;
