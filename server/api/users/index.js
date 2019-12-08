@@ -6,12 +6,12 @@ const router = express.Router();
 
 
 //GET 
-router.get('/', (req, res) => {
+router.get('/api/users', (req, res) => {
     res.send({ users: users });
 });
 
 //POST
-router.post('/', (req, res) => {
+router.post('/api/users', (req, res) => {
     let newUser = req.body;
     if (newUser) {
         users.push({ uid: newUser.uid, name: newUser.name, password: newUser.password, avatar: newUser.avatar, regDate: newUser.regDate, email: newUser.email, userRating: newUser.userRating });

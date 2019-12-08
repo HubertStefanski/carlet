@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import UserCard from "../userCard/"
-import * as api from './api';
+import * as api from './../../../api.js';
 let request = require("superagent");
 
 
@@ -17,13 +17,13 @@ class usersPage extends Component {
 
     render() {
 
-        users = _.sortBy(this.state.user, user => user.userRating);
+        const users = api.getAllUsers();
         return (
             <Fragment>
                 <div>
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <UserCard user={users} />x
+                            <UserCard user={users} />
                         </div>
                     </div>
                 </div>
