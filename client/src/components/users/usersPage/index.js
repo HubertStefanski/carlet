@@ -6,26 +6,24 @@ let request = require("superagent");
 
 
 class usersPage extends Component {
+    state = { users: [{}] };
     componentDidMount() {
-        request.get("").end((error, res) => {
-            if (res) {
-                let users = JSON.parse(res.text);
-                localUserCache.populate(users);
-                this.setState({});
-            } else {
-                console.log(error);
-            }
-        });
-    }
+        api.getAllUsers().then(resp => {
+            this.setState({
+                users: resp.users
+            });
+        }).catch(console.error);
+    };
+
     render() {
 
-        let updatedUserList = localUserCache.getAll();
+        users = _.sortBy(this.state.user, user => user.userRating);
         return (
             <Fragment>
                 <div>
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <UserCard user={updatedUserList} />
+                            <UserCard user={users} />x
                         </div>
                     </div>
                 </div>

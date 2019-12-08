@@ -1,5 +1,5 @@
 {
-  "name": "carlet",
+  "name": "carlet-front",
   "version": "0.2.1",
   "private": true,
   "dependencies": {
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "start": "nodemon --exec babel-node ./server/index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -41,6 +41,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:8080",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,7 +54,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080",
   "devDependencies": {
     "@storybook/react": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
