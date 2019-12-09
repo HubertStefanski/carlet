@@ -6,12 +6,12 @@ const router = express.Router();
 
 
 //GET 
-router.get('/api/users', (req, res) => {
+router.get('/', (req, res) => {
     res.send({ users: users });
 });
 
 //POST
-router.post('/api/users', (req, res) => {
+router.post('/', (req, res) => {
     let newUser = req.body;
     if (newUser) {
         users.push({ uid: newUser.uid, name: newUser.name, password: newUser.password, avatar: newUser.avatar, regDate: newUser.regDate, email: newUser.email, userRating: newUser.userRating });
@@ -34,7 +34,7 @@ router.put('/:id', (req, res) => {
         });
         res.status(200).send({ message: 'User Updated' });
     } else {
-        res.status(400).send({ message: 'Unable to find Contact in request. No Contact Found in body' });
+        res.status(400).send({ message: 'Unable to find User in request. No User Found in body' });
     }
 });
 //DELETE
