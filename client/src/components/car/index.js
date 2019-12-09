@@ -10,7 +10,7 @@ export default class Car extends Component {
                     <img
                         className="card-img-tag center "
                         alt={this.props.car.type}
-                        src={this.props.car.picture.thumbnail}
+                        src={this.props.car.picture}
                     />
                     <div className="card-body">
                         <h5 className="card-title ">

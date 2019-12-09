@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-const Home = props => {
-    {
+class Home extends Component {
+    render() {
         return (
             <Fragment>
                 <div className="row">
@@ -17,6 +17,7 @@ const Home = props => {
         );
     }
 }
+
 
 export default withRouter(Home);
 

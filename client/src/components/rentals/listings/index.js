@@ -4,34 +4,36 @@ import Header from '../../header';
 import CarList from '../../carList';
 import ListFilters from '../../listFilters';
 import localCarCache from "../../../resources/localCarCache";
-let request = require("superagent");
+import * as api from '../../../api.js';
 
-
+var updatedCarsList = null;
 
 
 
 class Listings extends Component {
-    componentDidMount() {
-        request.get("http://localhost:3001/car").end((error, res) => {
-            if (res) {
-                let cars = JSON.parse(res.text);
-                localCarCache.populate(cars);
-                this.setState({});
-            } else {
-                console.log(error);
-            }
-        });
-    }
+    state = { cars: [{}] };
+    componenDidMount() {
+        api.getAllCars().then(resp => {
+            this.setState({
+                cars: resp.cars
+            });
+            localCarCache.populate(resp.cars);
+            console.log("reached localCachepopulate");
+        }).catch(console.error);
+    };
+
+
     render() {
 
-        let updatedCarsList = localCarCache.getAll();
+       
         return (
             <Fragment>
+                 updatedCarsList = localCarCache.getAll();
                 <div>
 
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <h1>Our offers  <Header noCars={updatedCarsList.length} /> </h1>
+                            <Header noCars={updatedCarsList.length} />
                         </div>
                     </div>
                     <div className="row">

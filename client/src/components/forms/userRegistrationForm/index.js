@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-let request = require("superagent");
 
 export default class Form extends Component {
 
