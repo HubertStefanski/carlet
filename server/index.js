@@ -3,6 +3,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import usersRouter from './api/users';
 import carsRouter from './api/cars';
+import './db';
+import loadUsers from './userData';
+import loadCars from './carData';
+
 
 dotenv.config();
 
@@ -10,6 +14,12 @@ dotenv.config();
 const app = express();
 
 const port = process.env.PORT;
+
+
+if(process.env.seedDb){
+  loadUsers();
+  loadCars();
+}
 
 app.use(express.static('../client/public'));
 app.use(bodyParser.json());

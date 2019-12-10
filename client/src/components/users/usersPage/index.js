@@ -14,6 +14,7 @@ class usersPage extends Component {
                 users: resp.users
             });
             localUserCache.populate(resp.users);
+            console.log(resp.users);
         }).catch(console.error);
     };
 

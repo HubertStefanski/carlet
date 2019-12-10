@@ -7,6 +7,9 @@ export default class Car extends Component {
         return (
             <div className="col-sm-3">
                 <div className="card">
+                    <p key="uid">
+                        <span> Listing ID {this.props.car._id} </span>
+                    </p>
                     <img
                         className="card-img-tag center "
                         alt={this.props.car.type}
@@ -32,10 +35,10 @@ export default class Car extends Component {
                             aria-label="..."
                         >
                             <button type="button" className="btn btn-info w-100">
-                                 View Details 
+                                View Details
                             </button>
                             <button type="button" className="btn btn-primary w-100">
-                                 Rent this car 
+                                Rent this car
                             </button>
                         </div>
                     </div>

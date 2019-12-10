@@ -18,18 +18,16 @@ class Listings extends Component {
                 cars: resp.cars
             });
             localCarCache.populate(resp.cars);
-            console.log("reached localCachepopulate");
+            console.log("reached localCache populate");
         }).catch(console.error);
     };
 
 
     render() {
 
-       
+        updatedCarsList = localCarCache.getAll();
         return (
             <Fragment>
-                 updatedCarsList = localCarCache.getAll();
-                <div>
 
                     <div className="row">
                         <div className="col-md-6 offset-3">
@@ -43,10 +41,10 @@ class Listings extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <CarList cars={updatedCarsList} />
+                            <CarList car={updatedCarsList} />
                         </div>
                     </div>
-                </div>
+                
             </Fragment>
         );
     }
