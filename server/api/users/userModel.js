@@ -9,9 +9,7 @@ const UserSchema = new Schema({
     regDate: Date,
     email: String,
     userRating: Number,
-    OwnedCars: {
-        carUID: String,
-    },
+    OwnedCar: String
 });
 
 export default mongoose.model('User', UserSchema);

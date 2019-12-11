@@ -7,9 +7,8 @@ const users = [{
     "regDate": "November 2019",
     "email": "lorem@ipsum.dol",
     "userRating": 5,
-    "ownedCars": {
-        "carUID": "57fa3b02-1777-11ea-8d71-362b9e155667"
-    }
+    "ownedCars": "57fa3b02-1777-11ea-8d71-362b9e155667"
+
 },
 {
     "name": "Paul",
@@ -18,9 +17,8 @@ const users = [{
     "regDate": "January 2019",
     "email": "lorem1@ipsum.dol",
     "userRating": 5,
-    "ownedCars": {
-        "carUID": "57fa3b03-1777-11ea-8d71-362b9e155667"
-    }
+    "ownedCars": "57fa3b03-1777-11ea-8d71-362b9e155667"
+
 },
 {
     "name": "Gregory",
@@ -29,10 +27,8 @@ const users = [{
     "regDate": "October 2019",
     "email": "lorem2@ipsum.dol",
     "userRating": 5,
-    "ownedCars": {
-        "carUID": "57fa3b04-1777-11ea-8d71-362b9e155667"
-    }
-},
+    "ownedCars": "57fa3b04-1777-11ea-8d71-362b9e155667"
+}
 ];
 
 export default async function loadUsers() {
