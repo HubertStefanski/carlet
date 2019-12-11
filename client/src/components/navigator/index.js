@@ -48,7 +48,7 @@ export default class Navigator extends Component {
                                         onMouseEnter={this.handleOpen}
                                         onMouseLeave={this.handleClose}
                                         open={this.state.isOpen}
-                                        noCaret
+                                        
                                         id="language-switcher-container"
                                     >
                                         <NavItem><Link to="/rentals/listings">listings</Link></NavItem>
@@ -61,7 +61,7 @@ export default class Navigator extends Component {
                                         onMouseEnter={this.handleOpen}
                                         onMouseLeave={this.handleClose}
                                         open={this.state.isOpen}
-                                        noCaret
+                                        
                                         id="language-switcher-container"
                                     >
                                         <NavItem><Link to="/info/faq">Frequently asked Questions</Link></NavItem>
@@ -75,7 +75,7 @@ export default class Navigator extends Component {
                                         onMouseEnter={this.handleOpen}
                                         onMouseLeave={this.handleClose}
                                         open={this.state.isOpen}
-                                        noCaret
+                                        
                                         id="language-switcher-container"
                                     >
                                         <NavItem><Link to="/users/usersPage/">Users </Link></NavItem>

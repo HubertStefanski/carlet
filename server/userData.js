@@ -13,10 +13,10 @@ const users = [{
 },
 {
     "name": "Paul",
-    "password": " password",
+    "password": " password1",
     "avatar": null,
     "regDate": "January 2019",
-    "email": "lorem@ipsum.dol",
+    "email": "lorem1@ipsum.dol",
     "userRating": 5,
     "ownedCars": {
         "carUID": "57fa3b03-1777-11ea-8d71-362b9e155667"
@@ -24,10 +24,10 @@ const users = [{
 },
 {
     "name": "Gregory",
-    "password": " password",
+    "password": " password2",
     "avatar": null,
     "regDate": "October 2019",
-    "email": "lorem@ipsum.dol",
+    "email": "lorem2@ipsum.dol",
     "userRating": 5,
     "ownedCars": {
         "carUID": "57fa3b04-1777-11ea-8d71-362b9e155667"
