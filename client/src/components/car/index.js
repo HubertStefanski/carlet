@@ -8,7 +8,7 @@ export default class Car extends Component {
             <div className="col-sm-3">
                 <div className="card">
                     <p key="uid">
-                        <span> Listing ID {this.props.car._id} </span>
+                        <span> Listing ID: {this.props.car._id} </span>
                     </p>
                     <img
                         className="card-img-tag center "
@@ -22,10 +22,10 @@ export default class Car extends Component {
                                 } ${this.props.car.year}`}
                         </h5>
                         <p key="owner">
-                            <span> {this.props.car.owner} </span>
+                            <span> Owner: {this.props.car.owner} </span>
                         </p>
                         <p key="price">
-                            <span> {this.props.car.price} /day </span>
+                            <span> Price: {this.props.car.price} /day </span>
                         </p>
                     </div>
                     <div className="card-footer">

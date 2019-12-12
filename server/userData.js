@@ -3,9 +3,9 @@ import UserModel from './api/users/userModel';
 const users = [{
     "name": "Adam",
     "password": " password",
-    "avatar": null,
+    "avatar":"https://ph-files.imgix.net/c495260b-6e2b-4987-b44e-a669dce024c6?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=221&h=221&fit=max",
     "regDate": "November 2019",
-    "email": "lorem@ipsum.dol",
+    "email": "peterson@gmail.com",
     "userRating": 5,
     "ownedCars": "57fa3b02-1777-11ea-8d71-362b9e155667"
 
@@ -13,9 +13,9 @@ const users = [{
 {
     "name": "Paul",
     "password": " password1",
-    "avatar": null,
+    "avatar": "http://petapixel.com/assets/uploads/2017/11/fake4.jpg",
     "regDate": "January 2019",
-    "email": "lorem1@ipsum.dol",
+    "email": "Paul0518@yahoo.com",
     "userRating": 5,
     "ownedCars": "57fa3b03-1777-11ea-8d71-362b9e155667"
 
@@ -23,9 +23,9 @@ const users = [{
 {
     "name": "Gregory",
     "password": " password2",
-    "avatar": null,
+    "avatar": "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
     "regDate": "October 2019",
-    "email": "lorem2@ipsum.dol",
+    "email": "GregoryDrew@gmail.com",
     "userRating": 5,
     "ownedCars": "57fa3b04-1777-11ea-8d71-362b9e155667"
 }
