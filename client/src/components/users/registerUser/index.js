@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from 'react-router-dom';
-import UserRegistrationForm from '../../forms/userRegistrationForm'
+import UserRegistrationForm from '../../forms/userRegistrationForm/index'
 
 
 class RegisterUser extends Component {
@@ -8,9 +8,9 @@ class RegisterUser extends Component {
     render() {
         return (
             <div>
-                <Fragment>
-                    <UserRegistrationForm />
-                </Fragment>
+
+                <UserRegistrationForm />
+
             </div>
         );
     }

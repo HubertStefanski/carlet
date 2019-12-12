@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = new Schema({
-    uid: String,
     name: String,
+    password: String,
+    email: String,
     avatar: String,
     regDate: Date,
-    email: String,
     userRating: Number,
-    OwnedCar: String
+    ownedCar: String
 });
 
 export default mongoose.model('User', UserSchema);

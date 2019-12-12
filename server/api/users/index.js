@@ -15,11 +15,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Create a user, using async handler
 router.post('/', asyncHandler(async (req, res) => {
   const user = await User.create(req.body);
   res.status(201).json(user);
 }));
+
+// // Create a user, using async handler
+// router.post('/', asyncHandler(async (req, res) => {
+//   const newUser = req.body;
+//   if (newUser) {
+//         const user = await User.create(newUser);
+//         return res.status(201).send({user});
+//     } else {
+//        return handleError(res, err);
+//     }
+// }));
 
 // Update users
 router.put('/:id', asyncHandler(async (req, res) => {

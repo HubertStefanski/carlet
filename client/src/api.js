@@ -15,22 +15,21 @@ export const getAllUsers = () => {
     .then(resp => resp.data);
 };
 
-export const getCar = carUID => {
-  return axios.get(`/api/cars/${carUID}`)
+export const getCar = _id => {
+  return axios.get(`/api/cars/${_id}`)
     .then(resp => resp.data);
 };
 
 
-export const getUser = userUID => {
-  return axios.get(`/api/user/${userUID}`)
+export const getUser = _id => {
+  return axios.get(`/api/users/${_id}`)
     .then(resp => resp.data);
 };
 
-export const addCar = (newUID, newType, newPicture, newBrand, newModel, newYear, newOwner, newPrice) => {
-  return axios.post('/api/cars', { uid: newUID, type: newType, picture: newPicture, brand: newBrand, model: newModel, year: newYear, owner: newOwner, price: newPrice })
+export const addCar = (newType, newPicture, newBrand, newModel, newYear, newOwner, newPrice) => {
+  return axios.post('/api/cars', { type: newType, picture: newPicture, brand: newBrand, model: newModel, year: newYear, owner: newOwner, price: newPrice })
     .then(resp => resp.data);
 };
-export const addUser = (newName, newPassword, newRegDate, newEmail) => {
-  return axios.post('/api/posts', { name: newName, password: newPassword, regDate: newRegDate, email: newEmail })
-    .then(resp => resp.data);
+export const addUser = (newName, newPassword, newEmail, newAvatar, newRegDate, newUserRating, newOwnedCar) => {
+  return axios.post('/api/users', { name: newName, password: newPassword, email: newEmail, avatar: newAvatar, regDate: newRegDate, userRating: newUserRating, ownedCar: newOwnedCar }).then(resp => resp.data);
 };
