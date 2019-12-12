@@ -1,60 +1,51 @@
 import express from 'express';
-import stubAPI from './stubAPI';
+import asyncHandler from 'express-async-handler';
+import Car from './carModel';
 
 
 const router = express.Router();
 
 
 //GET 
-router.get('/', (req, res) => {
-    const cars = stubAPI.getAllCars();
-    res.send({ cars: cars });
+router.get('/', async (req, res) => {
+    try {
+        const cars = await Car.find();
+        res.status(200).json(cars);
+    } catch (error) {
+        handleError(res, error.message);
+    }
 });
-
 //POST
-router.post('/', (req, res) => {
-    let newCar = req.body;
-    if (newCar && stubAPI.addCar(newCar.uid, newCar.type, newCar.picture, newCar.brand, newCar.model, newCar.year, newCar.owner, newCar.price)) {
-        res.status(201).send({ message: "Car Created" });
-    } else {
-        res.status(400).send({ message: "Unable to find Contact in request. No Contact Found in body" });
-    }
-});
+// Create a user, using async handler
+router.post('/', asyncHandler(async (req, res) => {
+    const car = await Car.create(req.body);
+    res.status(201).json(car);
+}));
 //UPDATE
-router.put('/:id', (req, res) => {
-    const key = req.params.id;
-    const updateCar = req.body;
-    const index = cars.map((cars) => {
-        return cars.uid;
-    }).indexOf(key);
-    if (index !== -1) {
-        cars.splice(index, 1, {
-            type: updateCar.type, picture: updateCar.picture,
-            brand: updateCar.brand, model: updateCar.model, year: updateCar.year, price: updateCar.price
-        });
-        res.status(200).send({ message: 'Car Updated' });
-    } else {
-        res.status(400).send({ message: 'Unable to find Contact in request. No Contact Found in body' });
-    }
-});
+router.put('/:id', asyncHandler(async (req, res) => {
+    if (req.body._id) delete req.body._id;
+    const car = await Car.update({
+        _id: req.params.id,
+    }, req.body, {
+        upsert: false,
+    });
+    if (!user) return res.sendStatus(404);
+    return res.json(200, car);
+}));
+
 //DELETE
-router.delete('/:id', (req, res) => {
-    const key = req.params.id;
-    const index = cars.map((cars) => {
-        return cars.uid;
-    }).indexOf(key);
-    if (index > -1) {
-        cars.splice(index, 1);
-        res.status(200).send({ message: `Deleted car with uid: ${key}.` });
-    } else {
-        res.status(400).send({ message: `Unable to find car with uid: ${key}.` });
-    }
-});
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const car = await car.findById(req.params.id);
+    if (!car) return res.send(404);
+    await car.remove();
+    return res.status(204).send(car);
+}));
+
 
 //GET by ID
 router.get('/:id', (req, res) => {
     const id = req.params.id;
-    const car = stubAPI.getCar(id);
+    const car = api.getCar(id);
 
     if (car) {
         return res.status(200).send(car);
@@ -62,5 +53,15 @@ router.get('/:id', (req, res) => {
     return res.status(404).send({ message: `unable to find car ${id}` });
 
 });
+
+/**
+ * Handle general errors.
+ * @param {object} res The response object
+ * @param {object} err The error object.
+ * @return {object} The response object
+ */
+function handleError(res, err) {
+    return res.send(500, err);
+};
 
 export default router;

@@ -6,27 +6,27 @@ const cars = [{
     "picture": "stories/stock.png",
     "brand": "BMW",
     "model": "M4",
-    "year": "2019",
+    "year": 2019,
     "owner": "jimsbiscuits",
-    "price": "50"
+    "price": 50
 },
 {
     "type": "SUV",
     "picture": "stories/stock.png",
     "brand": "MERCEDES-BENZ",
     "model": "G",
-    "year": "2016",
+    "year": 2016,
     "owner": "cargoman",
-    "price": "300"
+    "price": 300
 },
 {
     "type": "HATCHBACK",
     "picture": "stories/stock.png",
     "brand": "FORD",
     "model": "FIESTA",
-    "year": "2010",
+    "year": 2010,
     "owner": "feistyfiesta",
-    "price": "50"
+    "price": 50
 }
 ];
 

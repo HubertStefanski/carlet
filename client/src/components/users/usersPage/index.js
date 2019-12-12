@@ -1,10 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import UserCard from "../userCard/"
-import localUserCache from "../../../resources/localUserCache";
 import * as api from '../../../api.js';
 
-var userList = null;
+
 
 class usersPage extends Component {
     constructor(props) {
@@ -17,11 +16,10 @@ class usersPage extends Component {
 
     componentDidMount() {
         api.getAllUsers()
-            .then(res => res.json())
-            .then((json) => {
+            .then(resp => {
                 this.setState({
                     isLoaded: true,
-                    users: json.users
+                    users: resp 
                 })
             },
                 (error) => {
@@ -49,7 +47,7 @@ class usersPage extends Component {
 
     render() {
         // userList = localUserCache.getAll();
-        const { isLoaded, users } = this.state.users;
+        const { isLoaded, users } = this.state;
         if (!isLoaded) {
             return <div>Loading</div>
         }

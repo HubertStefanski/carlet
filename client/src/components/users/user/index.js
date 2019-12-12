@@ -12,9 +12,7 @@ export default class User extends Component {
                     />
                     <div className="card-body">
                         <h5 className="card-title ">
-                            {`${this.props.user.name} ${
-                                this.props.user.regDate
-                                }`}
+                            {`${this.props.user.name}`}
                         </h5>
                         <p key="email">
                             <span> {this.props.user.email}</span>

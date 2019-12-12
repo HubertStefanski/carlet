@@ -21,7 +21,7 @@ router.post('/', asyncHandler(async (req, res) => {
   res.status(201).json(user);
 }));
 
-// Update a users
+// Update users
 router.put('/:id', asyncHandler(async (req, res) => {
   if (req.body._id) delete req.body._id;
   const user = await User.update({

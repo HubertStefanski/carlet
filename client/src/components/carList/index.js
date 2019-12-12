@@ -7,7 +7,7 @@ export default class CarList extends Component {
     render(){
         const fromArray = Array.from(this.props.car)
         const carCards = fromArray.map(c =>(
-            <Car key={c.uid} car={c} />
+            <Car key={c._id} car={c} />
         ));
         return(
             <div className="container-fluid cars bg-info">

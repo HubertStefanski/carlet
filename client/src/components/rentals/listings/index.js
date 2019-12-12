@@ -3,35 +3,49 @@ import { withRouter } from 'react-router-dom';
 import Header from '../../header';
 import CarList from '../../carList';
 import ListFilters from '../../listFilters';
-import localCarCache from "../../../resources/localCarCache";
 import * as api from '../../../api.js';
-
-var updatedCarsList = null;
 
 
 
 class Listings extends Component {
-    state = { cars: [{}] };
-    componenDidMount() {
-        api.getAllCars().then(resp => {
-            this.setState({
-                cars: resp.cars
-            });
-            localCarCache.populate(resp.cars);
-            console.log("reached localCache populate");
-        }).catch(console.error);
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            cars: [],
+            isLoaded: false
+        }
+    }
 
+    componentDidMount() {
+        api.getAllCars()
+            .then(resp => {
+                this.setState({
+                    isLoaded: true,
+                    cars: resp
+                })
+            },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                    console.log(error);
+                }
+            );
+    }
 
     render() {
-
-        updatedCarsList = localCarCache.getAll();
-        return (
-            <Fragment>
+        const { isLoaded, cars } = this.state;
+        if (!isLoaded) {
+            return <div>Loading</div>
+        }
+        else {
+            return (
+                <Fragment>
 
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <Header noCars={updatedCarsList.length} />
+                            <Header noCars={cars.length} />
                         </div>
                     </div>
                     <div className="row">
@@ -41,12 +55,13 @@ class Listings extends Component {
                     </div>
                     <div className="row">
                         <div className="col-md-6 offset-3">
-                            <CarList car={updatedCarsList} />
+                            <CarList car={cars} />
                         </div>
                     </div>
-                
-            </Fragment>
-        );
+
+                </Fragment>
+            );
+        }
     }
 }
 export default withRouter(Listings);
