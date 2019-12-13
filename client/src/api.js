@@ -21,8 +21,8 @@ export const getCar = _id => {
 };
 
 
-export const getUser = _id => {
-  return axios.get(`/api/users/${_id}`)
+export const getUser = id => {
+  return axios.get(`/api/users/${id}`)
     .then(resp => resp.data);
 };
 

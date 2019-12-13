@@ -12,6 +12,7 @@ import LoginPage from '../loginPage/';
 import UsersPage from '../users/usersPage/';
 import RegisterUser from '../users/registerUser';
 import ContactForm from '../info/contactForm';
+import UserProfile from '../users/userProfile';
 
 
 
@@ -81,6 +82,9 @@ export default class Navigator extends Component {
                                         <NavItem><Link to="/users/usersPage/">Users </Link></NavItem>
                                         <NavItem><Link to="/users/registerUser/"> Register</Link> </NavItem>
                                         <NavItem><Link to="/login"> Login </Link></NavItem>
+                                        <NavItem><Link to="/user/:id"> User Profile </Link></NavItem>
+                        
+                                        
                                     </NavDropdown>
                                 </NavItem>
                             </Nav>
@@ -101,6 +105,8 @@ export default class Navigator extends Component {
                         <Route path="/users/usersPage" component={UsersPage} />
                         <Route path="/users/registerUser" component={RegisterUser} />
                         <Route path="/login" component={LoginPage} />
+                        <Route path="/users/:id" component={UserProfile} />
+
                     </Switch>
                 </Router >
             </div >

@@ -12,4 +12,4 @@ const UserSchema = new Schema({
     ownedCar: String
 });
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('User', UserSchema);  

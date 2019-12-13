@@ -15,6 +15,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', asyncHandler(async (req, res) => {
+  const id =req.params.id;
+  try {
+    const user = await User.findById(id);
+    res.status(200).json(user);
+  } catch (error) {
+    handleError(res, error.message);
+  }  
+}));
 router.post('/', asyncHandler(async (req, res) => {
   const user = await User.create(req.body);
   res.status(201).json(user);
@@ -31,7 +40,7 @@ router.post('/', asyncHandler(async (req, res) => {
 //     }
 // }));
 
-// Update users
+// Update usersm
 router.put('/:id', asyncHandler(async (req, res) => {
   if (req.body._id) delete req.body._id;
   const user = await User.update({

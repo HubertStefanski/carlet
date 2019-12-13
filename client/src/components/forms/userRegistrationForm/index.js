@@ -47,7 +47,7 @@ export default class userRegistrationForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        api.addUser(this.state.name, this.state.password, this.state.email, this.state.avatar, this.state.regDate, this.state.userRating, this.state.ownedCar)
+        api.addUser(this.state.name, this.state.password, this.state.email, this.state.avatar, this.state.regDate = Date.now(), this.state.userRating = 0, this.state.ownedCar= '') 
             .then(resp => {
                 const newUser = { "name": this.state.name, "password": this.state.password, "email": this.state.email, "avatar": this.state.avatar, "regDate": this.state.regDate, "userRating": 0, "ownedCars": "" };
             })
