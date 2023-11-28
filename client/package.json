@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
-    "@okta/okta-signin-widget": "^2.21.0",
+    "@okta/okta-signin-widget": "^7.12.2",
     "@trendmicro/react-breadcrumbs": "^0.5.5",
     "@trendmicro/react-buttons": "^1.3.1",
     "@trendmicro/react-dropdown": "^1.3.0",
